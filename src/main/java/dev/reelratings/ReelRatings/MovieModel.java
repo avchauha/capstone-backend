@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.util.List;
 
@@ -15,11 +16,28 @@ import java.util.List;
 public class MovieModel {
     @Id
     private ObjectId id;
-//    private Integer id;
+    private String movieId;
     private String title;
     private String releaseDate;
+    private String trailer;
+    private String posterPhoto;
+    private List<String> backdropPhotos;
     private List<String> genres;
-    // Next Steps create an embedded relationship b/w MovieModel & ReviewModel
+    @DocumentReference
+    private List<ReviewModel> reviews;
+
+
+    public MovieModel(String movieId, String title, String releaseDate, String trailer, String posterPhoto, List<String> backdropPhotos, List<String> genres ) {
+        this.movieId = movieId;
+        this.title = title;
+        this.releaseDate = releaseDate;
+        this.trailer = trailer;
+        this.posterPhoto = posterPhoto;
+        this.backdropPhotos = backdropPhotos;
+        this.genres = genres;
+
+    }
+
 
 }
 
