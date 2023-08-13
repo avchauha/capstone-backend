@@ -16,9 +16,9 @@ public class ReviewService {
         this.movieRepository = movieRepository;
     }
 
-    public ReviewModel createReview(String reviewBody, String movieId) {
+    public ReviewModel createReview(String reviewBody, Integer stars, String movieId) {
 
-        ReviewModel review = new ReviewModel(reviewBody);
+        ReviewModel review = new ReviewModel(reviewBody, stars);
         reviewRepository.insert(review);
 
         Optional<MovieModel> movieByMovieId = movieRepository.findMovieByMovieId(movieId);

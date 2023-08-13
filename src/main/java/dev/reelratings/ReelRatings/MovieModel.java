@@ -20,6 +20,7 @@ public class MovieModel {
     private String title;
     private String releaseDate;
     private String trailer;
+    private String summary;
     private String posterPhoto;
     private List<String> backdropPhotos;
     private List<String> genres;

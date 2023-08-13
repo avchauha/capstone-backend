@@ -7,8 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/movies")
 public class MovieCatalogController {
 
@@ -20,7 +21,7 @@ public class MovieCatalogController {
         return new ResponseEntity<List<MovieModel>>(movieCatalogService.getAllMovies(), HttpStatus.OK);
     }
 
-    @GetMapping("/{movieId}")
+    @GetMapping("/{movieId}/reviews")
     public ResponseEntity<MovieModel> getMovieById(@PathVariable String movieId) {
         Optional<MovieModel> movie = movieCatalogService.findMovieByMovieId(movieId);
         if (movie.isPresent()) {
