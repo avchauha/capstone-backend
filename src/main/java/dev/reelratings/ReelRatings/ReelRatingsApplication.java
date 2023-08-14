@@ -21,10 +21,9 @@ public class ReelRatingsApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
-						.allowedOrigins("https://reelratingsapp-frontendfinal.onrender.com")
+						.allowedOrigins("*")
 						.allowedMethods("*")
-						.allowedHeaders("*")
-						.allowCredentials(false).maxAge(3600);
+						.allowedHeaders("*");
 			}
 		};
 	}
