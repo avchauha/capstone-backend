@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://sage-truffle-5179a2.netlify.app/")
 @RequestMapping("/movies/{movieId}/reviews")
 public class ReviewController {
     private final ReviewService service;

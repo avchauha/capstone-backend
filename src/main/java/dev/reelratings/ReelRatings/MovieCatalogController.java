@@ -10,7 +10,7 @@ import java.util.Optional;
 
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://sage-truffle-5179a2.netlify.app/")
 @RequestMapping("/movies")
 public class MovieCatalogController {
 
