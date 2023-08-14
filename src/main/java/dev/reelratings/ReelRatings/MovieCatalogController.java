@@ -9,7 +9,7 @@ import java.util.Optional;
 
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 @RequestMapping("/movies")
 public class MovieCatalogController {
 
