@@ -9,7 +9,7 @@ import java.util.Optional;
 
 
 @RestController
-@CrossOrigin(origins = "https://reelratingsapp-frontendfinal.onrender.com:3000")
+@CrossOrigin(origins = "https://reelratingsapp-frontendfinal.onrender.com", allowedHeaders = "*")
 @RequestMapping("/movies")
 public class MovieCatalogController {
 

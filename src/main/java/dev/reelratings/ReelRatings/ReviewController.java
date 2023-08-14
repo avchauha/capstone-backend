@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "https://reelratingsapp-frontendfinal.onrender.com:3000")
+@CrossOrigin(origins = "https://reelratingsapp-frontendfinal.onrender.com", allowedHeaders = "*")
 @RequestMapping("/movies/{movieId}/reviews")
 public class ReviewController {
     private final ReviewService service;
