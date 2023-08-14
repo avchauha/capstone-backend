@@ -1,5 +1,6 @@
 package dev.reelratings.ReelRatings;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +10,7 @@ import java.util.Optional;
 
 
 @RestController
-//@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST})
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = {RequestMethod.GET, RequestMethod.POST})
 @RequestMapping("/movies")
 public class MovieCatalogController {
 
@@ -18,7 +19,11 @@ public class MovieCatalogController {
 
     @GetMapping
     public ResponseEntity<List<MovieModel>>getAllMovies() {
-        return new ResponseEntity<List<MovieModel>>(movieCatalogService.getAllMovies(), HttpStatus.OK);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Access-Control-Allow-Origin", "*");
+        headers.add("Access-Control-Allow-Methods", "*");
+        headers.add("Access-Control-Allow-Headers", "*");
+        return new ResponseEntity<List<MovieModel>>(movieCatalogService.getAllMovies(), headers, HttpStatus.OK);
     }
 
     @GetMapping("/{movieId}/reviews")
